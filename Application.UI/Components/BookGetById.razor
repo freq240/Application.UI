@@ -1,0 +1,48 @@
+﻿<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<h3>Get book by ID</h3>
+<br />
+<br />
+
+
+<div class="input-group">
+    <input placeholder="Id" @bind="FoundedId" />
+</div>
+<div class="btn-block">
+    <button class="btn btn-dark" @onclick="()=>GetByIdAsync(Convert.ToInt32(FoundedId))">
+        Find book
+    </button>
+</div>
+
+<table class="table table-striped mr-5">
+    <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Book is null)
+        {
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        }
+        else
+        {
+
+            <tr>
+                <td>@Book.Id</td>
+                <td>@Book.Name</td>
+                <td>@Book.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>

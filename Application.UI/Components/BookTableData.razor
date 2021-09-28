@@ -1,0 +1,41 @@
+﻿<h3>BookTableData</h3>
+
+
+@if (string.IsNullOrWhiteSpace(errorString) == false)
+{
+    <div class="h2">@errorString</div>
+}
+else
+{
+    if (books is null)
+    {
+        <div class="h4">Loading...</div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in books)
+                {
+                    <tr>
+                        <td>@book.Id</td>
+                        <td>@book.Name</td>
+                        <td>@book.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
+<div class="btn-block">
+    <button class="btn btn-dark" @onclick="()=>UpdateAsync()">
+        Update
+    </button>
+</div>

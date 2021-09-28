@@ -1,0 +1,19 @@
+﻿<br />
+<br />
+<br />
+<br />
+<br />
+<h3>BookUpdate</h3>
+<br />
+<br />
+
+<div class="input-group">
+    <input placeholder="Id" @bind="UpdatedId" />
+    <input placeholder="Name" @bind="NewName" />
+    <input placeholder="Price" @bind="NewPrice" />
+</div>
+<div class="btn-block">
+    <button class="btn btn-dark" @onclick="()=>UpdateByIdAsync(Convert.ToInt32(UpdatedId), NewName, Convert.ToDouble(NewPrice))">
+        Update book
+    </button>
+</div>
