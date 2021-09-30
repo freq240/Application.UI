@@ -89,8 +89,7 @@ namespace Application.UI.Services
         public async Task UpdateByIdAsync(string id, string name, string price)
         {
             var client = ClientFactory.CreateClient();
-            //var jsonString = JsonConvert.SerializeObject(new BookWithIdViewModel(id, name, price));
-            var jsonString = "{\"id\":8,\"name\":UPDATED8,\"price\":8888888}";
+            var jsonString = JsonConvert.SerializeObject(new BookWithIdViewModel(id, name, price));
             var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
             test = jsonString.ToString();
