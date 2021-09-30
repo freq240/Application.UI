@@ -1,7 +1,9 @@
 using Application.UI.Models;
+using Application.UI.Services;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -20,6 +22,7 @@ namespace Application.UI
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddHttpClient();
+            builder.Services.AddScoped<QueryService>();
             await builder.Build().RunAsync();
         }
     }

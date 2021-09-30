@@ -10,7 +10,7 @@
     <input placeholder="Id" @bind="DeletedId" />
 </div>
 <div class="btn-block">
-    <button class="btn btn-dark" @onclick="()=>DeleteByIdAsync(Convert.ToInt32(DeletedId))">
+    <button class="btn btn-dark" @onclick="()=>QueryService.DeleteByIdAsync(DeletedId)">
         Delete
     </button>
 </div>

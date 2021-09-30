@@ -1,4 +1,5 @@
 ﻿using Application.UI.Models;
+using Application.UI.Services;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -12,27 +13,12 @@ namespace Application.UI.Components
     public partial class BookTableData
     {
         [Inject]
-        protected IHttpClientFactory ClientFactory { get; set; }
-
-        public Book[] books;
-        public string errorString;
-
+        protected QueryService QueryService { get; set; }
 
 
         protected override async Task OnInitializedAsync()
-        {
-
-            var client = ClientFactory.CreateClient();
-
-            try
-            {
-                books = await client.GetFromJsonAsync<Book[]>("https://localhost:44304/get/all");
-                errorString = null;
-            }
-            catch(Exception ex)
-            {
-                errorString = $"There was an error getting out book: {ex.Message}";
-            }
+        { 
+            await QueryService.GetAll();
         }
 
         public async Task UpdateAsync()

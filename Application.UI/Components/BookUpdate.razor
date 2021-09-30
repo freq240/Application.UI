@@ -6,14 +6,14 @@
 <h3>BookUpdate</h3>
 <br />
 <br />
-
+@QueryService.test
 <div class="input-group">
     <input placeholder="Id" @bind="UpdatedId" />
     <input placeholder="Name" @bind="NewName" />
     <input placeholder="Price" @bind="NewPrice" />
 </div>
 <div class="btn-block">
-    <button class="btn btn-dark" @onclick="()=>UpdateByIdAsync(Convert.ToInt32(UpdatedId), NewName, Convert.ToDouble(NewPrice))">
+    <button class="btn btn-dark" @onclick="()=>QueryService.UpdateByIdAsync(UpdatedId, NewName, NewPrice)">
         Update book
     </button>
 </div>

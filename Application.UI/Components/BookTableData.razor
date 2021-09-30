@@ -1,13 +1,13 @@
 ﻿<h3>BookTableData</h3>
 
 
-@if (string.IsNullOrWhiteSpace(errorString) == false)
+@if (string.IsNullOrWhiteSpace(QueryService.ErrorString) == false)
 {
-    <div class="h2">@errorString</div>
+    <div class="h2">@QueryService.ErrorString</div>
 }
 else
 {
-    if (books is null)
+    if (QueryService.Books is null)
     {
         <div class="h4">Loading...</div>
     }
@@ -22,7 +22,7 @@ else
                 </tr>
             </thead>
             <tbody>
-                @foreach (var book in books)
+                @foreach (var book in QueryService.Books)
                 {
                     <tr>
                         <td>@book.Id</td>

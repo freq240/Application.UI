@@ -5,18 +5,17 @@ using System.Threading.Tasks;
 
 namespace Application.UI.Models
 {
-    public class Book
+    public class BookWithIdViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
+        public string Price { get; set; }
 
-        public double Price { get; set; }
-
-        public Book(string name, double price)
+        public BookWithIdViewModel(string id, string name, string price)
         {
+            Id = id;    
             Name = name;
             Price = price;
         }
-
     }
 }

@@ -13,7 +13,7 @@
     <input placeholder="Id" @bind="FoundedId" />
 </div>
 <div class="btn-block">
-    <button class="btn btn-dark" @onclick="()=>GetByIdAsync(Convert.ToInt32(FoundedId))">
+    <button class="btn btn-dark" @onclick="()=>QueryService.GetByIdAsync(FoundedId)">
         Find book
     </button>
 </div>
@@ -27,7 +27,7 @@
         </tr>
     </thead>
     <tbody>
-        @if (Book is null)
+        @if (QueryService.Book is null)
         {
             <tr>
                 <td></td>
@@ -39,9 +39,9 @@
         {
 
             <tr>
-                <td>@Book.Id</td>
-                <td>@Book.Name</td>
-                <td>@Book.Price</td>
+                <td>@QueryService.Book.Id</td>
+                <td>@QueryService.Book.Name</td>
+                <td>@QueryService.Book.Price</td>
             </tr>
         }
     </tbody>

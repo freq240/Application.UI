@@ -12,7 +12,7 @@
     <input placeholder="Price" @bind="PriceOfNewBook" />
 </div>
 <div class="btn-block">
-    <button class="btn btn-dark" @onclick="()=>AddBookAsync(NameOfNewBook, Convert.ToDouble(PriceOfNewBook))">
+    <button class="btn btn-dark" @onclick="()=>QueryService.AddBookAsync(NameOfNewBook, PriceOfNewBook)">
         Add book
     </button>
 </div>
